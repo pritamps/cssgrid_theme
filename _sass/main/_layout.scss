@@ -1,0 +1,198 @@
+@supports (display: grid) {
+.container {
+  display: grid;
+  grid-template-areas:
+    "header content"
+    "header content"
+    "header footer";
+
+  grid-template-columns: 40vh 1fr;
+  grid-template-rows: 1fr minmax(1em, auto);
+  grid-gap: 0px;
+
+  min-height: 100vh;
+
+}
+
+.site-header {
+  grid-area: header;
+  display: grid;
+  background: #333333;
+  position: fixed;
+  width: 40vh;
+  color: white;
+  height: 100vh;
+  text-align: center;
+  align-items: center;
+}
+
+// --- FOOTER ---
+
+.site-footer {
+  grid-area: footer;
+  align-self: end;
+  display: grid;
+  background: #333333;
+  color: white;
+  text-align: right;
+  padding: 1em;
+}
+
+.site-footer .contact_info ul {
+  list-style: none;
+  display: inline-block;
+}
+
+.site-footer .social_media ul>li {
+  display: inline-block;
+}
+
+
+// ---- MAIN CONTENT AREA ----
+main  {
+  grid-area: content;
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 46em) 1fr;
+  align-content: start;
+  grid-template-areas: ". post contents" ". post contents" ". comments .";
+  
+  .post,
+  .page {
+    grid-area: post;
+    display: grid;
+    padding-top: 60px;
+  }
+
+  .table-of-contents {
+    grid-area: contents
+  }
+
+  .comments {
+    grid-area: comments;
+  }
+}
+
+// --- HOME PAGE ---
+.page-heading {
+  text-align: center;
+  font-size: 40pt;
+  font-weight: bold;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-bottom: 2px solid black;
+}
+
+.post-list {
+  padding: 0;
+  margin: 0;
+}
+
+.post-list ul {
+  list-style: none;
+  margin: 0;
+}
+
+
+.post-list ul>li,
+.post-info {
+  display: block;
+  border-bottom: 1px solid #777777;
+  padding-bottom: 5px;
+  margin-bottom: 10px;
+}
+
+.post-info .post-categories {
+  float: right;
+}
+
+.post-meta {
+  font-weight: bold; 
+}
+
+.post-header {
+  padding: 20px;
+  text-align: center;
+}
+
+.post-header .post-title {
+  font-size: 32pt;
+  font-weight: bold;
+}
+
+.image-wrapper {
+  border: 1px solid black;
+}
+
+// --- MEDIA SPECIFIC QUERIES
+@media (max-width: 768px) {
+  .container {
+    grid-template-areas:
+      "header"
+      "content"
+      "footer";
+    grid-template-columns: auto;
+    grid-template-rows:
+      auto /* Header */
+      1fr /* Content */      
+      minmax(75px, auto) /* Aside */
+      auto; /* Footer */
+  }
+  
+  main {
+    grid-area: content;
+    padding: 20px;
+  }
+
+  .site-header {
+    grid-area: header;
+    height: 30vh;
+    width: 100%;
+    position: static;
+    align-self: center;
+  }
+
+}
+}
+
+// --- BODY CONTENT ---
+.post p {
+  padding: 10px;
+  line-height: 1.7em;
+  text-indent: 20px;
+}
+
+.post img + em { 
+  display: block; 
+  text-align: center; 
+  font-size: 10pt;
+  margin-bottom: 20px;
+}
+
+.post h2 {
+  margin-top: 20px;
+  font-size: 23pt;
+  font-weight: bold;
+}
+
+.post h3 {
+  margin-top: 15px;
+  font-size: 20pt;
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+// --- TABLE OF CONTENTS --
+#markdown-toc ul {
+    list-style: decimal;
+}
+
+#markdown-toc {
+    border: 1px solid #aaaaaa;
+    background: rgba(230, 230, 230, 0.96);
+    padding-left: 2em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    list-style: decimal;
+    display: inline-block;
+}
