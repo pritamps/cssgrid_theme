@@ -139,8 +139,7 @@ main  {
   }
   
   main {
-    grid-area: content;
-    padding: 20px;
+    padding: 20px;    
   }
 
   .site-header {
@@ -151,6 +150,13 @@ main  {
     align-self: center;
   }
 
+  .post-list ul>li,
+  .post-info {
+    display: inherit;
+    border-bottom: 1px solid #777777;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+  }
 }
 }
 

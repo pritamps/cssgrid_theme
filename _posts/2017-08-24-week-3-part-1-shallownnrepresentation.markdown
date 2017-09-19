@@ -17,11 +17,6 @@ Here's the mother-diagram for the rest of this post.
 
 I'm going to do something silly, just because I can. Even though you probably understand this diagram already, I'm going to build it from the ground up. For even more understanding. Not sure what I mean? Well, read on!
 
-## Table of Contents
-{:.no_toc}
-* Do not remove this line (it will not be displayed)
-{:toc}
-
 ## The Layers
 
 {:refdef: style="text-align: center;"}
@@ -219,7 +214,7 @@ The math involved in calculating the derivatives is very complicated. I know bec
 
 <script type="math/tex; mode=display">
 \begin{aligned}
-dZ^{[2]} &= A^{[2]} - Y \text { where } Y_{m \times 1} \text{ are the training labels } \\
+dZ^{[2]} &= A^{[2]} - Y \text { (} Y_{m \times 1} \text{ are the training labels)} \\
 dW^{[2]} &= \frac{1}{m} dZ^{[2]}A^{[1]^T} \\
 db^{[2]} &= \frac{1}{m} \sum dZ^{[2]} \\
 dZ^{[1]} &= \left( W^{[2]^T}dZ^{[2]} \right) \cdot \left( g^{\prime[2]}(Z^{[1]}) \right) \\
