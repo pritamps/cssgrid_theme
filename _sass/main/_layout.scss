@@ -157,6 +157,23 @@ main  {
     padding-bottom: 5px;
     margin-bottom: 10px;
   }
+
+
+  .equation > .katex {
+    display: inline-block;
+    white-space: nowrap;
+    max-width: 100%;
+    overflow-x: scroll;
+    text-align: initial;
+  }
+  
+  .katex {
+    font: normal 1em KaTeX_Main, Times New Roman, serif;
+    line-height: 1.2;
+    white-space: normal;
+    text-indent: 0;
+  }
+  
 }
 }
 
