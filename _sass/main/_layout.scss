@@ -123,6 +123,15 @@ main  {
   border: 1px solid black;
 }
 
+.equation {
+  display: table;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow-x: scroll;
+  overflow: auto;
+  text-align: initial;
+}
+
 // --- MEDIA SPECIFIC QUERIES
 @media (max-width: 768px) {
   .container {
@@ -160,16 +169,14 @@ main  {
 
 
   .equation > .katex {
-    display: inline-block;
+    display: table;
     white-space: nowrap;
     max-width: 100%;
-    overflow-x: scroll;
-    overflow: auto;
     text-align: initial;
   }
   
   .katex {
-    font: normal 1em KaTeX_Main, Times New Roman, serif;
+    font: normal 0.9em KaTeX_Main, Times New Roman, serif;
     line-height: 1.2;
     white-space: normal;
     text-indent: 0;
